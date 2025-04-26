@@ -1,3 +1,4 @@
+
 # Elevator Management System
 
 This project implements a scalable **Elevator Management System** using Object-Oriented Design (OOD) principles and the **Strategy Design Pattern** to handle dynamic request allocation policies based on operational conditions such as peak and non-peak hours.
@@ -9,22 +10,17 @@ This design follows structured modeling principles inspired by the [Elevator OOD
 
 ## Key Components and Interacting Objects
 
-| Class / Interface            | Responsibility                                                                |
-|-------------------------------|-------------------------------------------------------------------------------|
-| `Elevator`                    | Represents a physical elevator handling movement, door operations, and requests. |
-| `Request` (interface)         | Base abstraction for all requests in the system.                             |
-| `ExternalRequest`             | Represents requests made from outside the elevator (with level and direction). |
-| `InternalRequest`             | Represents requests made inside the elevator (destination floor only).        |
-| `HandleRequestStrategy` (interface) | Strategy pattern interface for request assignment logic.              |
+| Class / Interface | Responsibility |
+|-------------------|-----------------|
+| `Elevator` | Represents a physical elevator handling movement, door operations, and requests. |
+| `Request` (interface) | Base abstraction for all requests in the system. |
+| `ExternalRequest` | Represents requests made from outside the elevator (with level and direction). |
+| `InternalRequest` | Represents requests made inside the elevator (destination floor only). |
+| `HandleRequestStrategy` (interface) | Strategy pattern interface for request assignment logic. |
 | `PeakHourHandleRequestStrategy` | Strategy implementation prioritizing direction-matching elevators first. |
-| `NormalHourHandleRequestStrategy` | Strategy implementation prioritizing idle elevators first.            |
-| `Direction` (enum)            | Defines movement direction: `UP` or `DOWN`.                                  |
-| `Status` (enum)               | Defines elevator status: `IDLE`, `UP`, or `DOWN`.                            |
-
----
-
-
-```
+| `NormalHourHandleRequestStrategy` | Strategy implementation prioritizing idle elevators first. |
+| `Direction` (enum) | Defines movement direction: `UP` or `DOWN`. |
+| `Status` (enum) | Defines elevator status: `IDLE`, `UP`, or `DOWN`. |
 
 ---
 
@@ -89,18 +85,18 @@ system.handleRequest(request);
 
 ## Project Structure
 
-| Package         | Responsibility                                            |
-|-----------------|------------------------------------------------------------|
-| `core`          | Contains Elevator, Request classes, and Enums.             |
-| `strategy`      | Contains HandleRequestStrategy interface and implementations. |
-| `controller`    | Contains ElevatorSystem to coordinate elevators and requests. |
-| `test`          | Contains simulation via `Main` class.                      |
+| Package  | Responsibility |
+|----------|-----------------|
+| `core` | Contains Elevator, Request classes, and Enums. |
+| `strategy` | Contains HandleRequestStrategy interface and implementations. |
+| `controller` | Contains ElevatorSystem to coordinate elevators and requests. |
+| `test` | Contains simulation via `Main` class. |
 
 ---
 
 ## Design Patterns
 
-| Pattern           | Description |
-|-------------------|-------------|
+| Pattern | Description |
+|---------|-------------|
 | **Strategy Pattern** | Allows dynamic switching between different request allocation algorithms without changing system core. |
 
